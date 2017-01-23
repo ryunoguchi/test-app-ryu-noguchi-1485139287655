@@ -26,6 +26,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
+
+
 // Date()で現在時刻を取得する為のユーティリティ
 var dateutil = require('date-utils');
 
