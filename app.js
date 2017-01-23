@@ -20,7 +20,14 @@ app.use(express.static(__dirname + '/public'));
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
+/*** add start***/
+// POST パラメータ取得用 body-parser設定
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true}));
+app.user(bodyParser.json());
 
+
+/*** add end***/
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
